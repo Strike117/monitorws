@@ -1,0 +1,28 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[]"
+        ],
+        "designer|userClassName": "MessageStore",
+        "model": "Message",
+        "storeId": "MessageStore"
+    },
+    "designerId": "063d45aa-29ff-441f-875a-9cfda37d8a00",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Memory",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "designerId": "63835d30-95ab-444a-bfae-8b6eaf682ea0"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Message"
+    },
+    "designerId": "1a185a81-60ce-4973-b4fc-b084d8c31368",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "content"
+            },
+            "designerId": "4eeb7e46-7d01-4133-bba6-9f2f811a8db6"
+        }
+    ]
+}

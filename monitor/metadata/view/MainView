@@ -48,13 +48,13 @@
                         "dock": null,
                         "forceFit": true,
                         "id": "",
-                        "itemId": "gridPanel",
+                        "itemId": "userList",
                         "layout|flex": 1,
                         "layout|region": "west",
                         "layout|split": true,
                         "resizable": false,
                         "resizeHandles": null,
-                        "store": "Records",
+                        "store": "UserStore",
                         "title": null,
                         "width": 150
                     },
@@ -76,18 +76,13 @@
                             "designerId": "e0848696-2ab7-4a84-b385-dc05b44c0700"
                         },
                         {
-                            "type": "Ext.grid.column.Number",
+                            "type": "Ext.grid.RowNumberer",
                             "reference": {
                                 "name": "columns",
                                 "type": "array"
                             },
                             "codeClass": null,
-                            "userConfig": {
-                                "dataIndex": "id",
-                                "format": "0",
-                                "text": "ID"
-                            },
-                            "designerId": "96e48393-c1ae-4c17-8eef-270b5aa8effb"
+                            "designerId": "8b6e71d0-045d-4c42-b2d7-6397e9b58e05"
                         },
                         {
                             "type": "Ext.grid.column.Column",
@@ -97,46 +92,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "dataIndex": "title",
-                                "text": "User",
-                                "width": null
+                                "dataIndex": "user",
+                                "text": "User"
                             },
-                            "designerId": "81a6a31f-46de-42a1-a1d0-f392d8490303",
-                            "cn": [
-                                {
-                                    "type": "Ext.form.field.Text",
-                                    "reference": {
-                                        "name": "editor",
-                                        "type": "object"
-                                    },
-                                    "codeClass": null,
-                                    "designerId": "a8d982e0-10cc-4b88-a2b8-3bad7fdeab01"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "Ext.grid.column.Boolean",
-                            "reference": {
-                                "name": "columns",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "dataIndex": "isFeatured",
-                                "text": "Status"
-                            },
-                            "designerId": "c93edf68-a369-42b4-b101-2217b6e31d2b",
-                            "cn": [
-                                {
-                                    "type": "Ext.form.field.Checkbox",
-                                    "reference": {
-                                        "name": "editor",
-                                        "type": "object"
-                                    },
-                                    "codeClass": null,
-                                    "designerId": "a3d2c07d-3d77-4ad8-b569-1d89fca93c03"
-                                }
-                            ]
+                            "designerId": "b41d2571-fbe9-4830-b98c-56a856a73dd7"
                         }
                     ]
                 },
@@ -171,28 +130,45 @@
                     "designerId": "136884f9-9ae1-4ffa-9933-a0d47a86ced7",
                     "cn": [
                         {
-                            "type": "Ext.XTemplate",
+                            "type": "Ext.grid.Panel",
                             "reference": {
-                                "name": "tpl",
-                                "type": "object"
+                                "name": "items",
+                                "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|displayName": null,
-                                "implHandler": [
-                                    "<tpl if=\"values.id\">",
-                                    "    <h1>{title}</h1>",
-                                    "    <p>",
-                                    "        {description}",
-                                    "    </p>",
-                                    "</tpl>",
-                                    "",
-                                    "<tpl if=\"!values.id\">",
-                                    "    <h1>Please select a record</h1>",
-                                    "</tpl>"
-                                ]
+                                "store": "MessageStore",
+                                "title": "My Grid Panel"
                             },
-                            "designerId": "aff40032-1291-46d8-a893-3a494c39d61b"
+                            "designerId": "a6c55cd2-8326-4939-b995-553dbd148979",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "GridView"
+                                    },
+                                    "designerId": "bc1d118d-545a-4275-87ef-7a07217ce829"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "content",
+                                        "flex": 1,
+                                        "text": "Messages"
+                                    },
+                                    "designerId": "4de4e5a8-4346-4ae8-bb00-5f3cd5f710c9"
+                                }
+                            ]
                         }
                     ]
                 }

@@ -1,0 +1,25 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "WebsocketController"
+        ],
+        "models": [
+            "Record",
+            "Message"
+        ],
+        "name": "monitor",
+        "stores": [
+            "MessageStore"
+        ],
+        "views": [
+            "MainView"
+        ]
+    },
+    "designerId": "application"
+}

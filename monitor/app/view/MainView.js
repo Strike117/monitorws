@@ -16,10 +16,6 @@
 Ext.define('monitor.view.MainView', {
     extend: 'Ext.container.Viewport',
 
-    requires: [
-        'Ext.XTemplate'
-    ],
-
     id: 'mainView',
     layout: {
         type: 'fit'
@@ -47,34 +43,20 @@ Ext.define('monitor.view.MainView', {
                             region: 'west',
                             split: true,
                             id: '',
-                            itemId: 'gridPanel',
+                            itemId: 'userList',
                             width: 150,
                             resizable: false,
                             bodyBorder: false,
                             forceFit: true,
-                            store: 'Records',
+                            store: 'UserStore',
                             columns: [
                                 {
-                                    xtype: 'numbercolumn',
-                                    dataIndex: 'id',
-                                    text: 'ID',
-                                    format: '0'
+                                    xtype: 'rownumberer'
                                 },
                                 {
                                     xtype: 'gridcolumn',
-                                    dataIndex: 'title',
-                                    text: 'User',
-                                    editor: {
-                                        xtype: 'textfield'
-                                    }
-                                },
-                                {
-                                    xtype: 'booleancolumn',
-                                    dataIndex: 'isFeatured',
-                                    text: 'Status',
-                                    editor: {
-                                        xtype: 'checkboxfield'
-                                    }
+                                    dataIndex: 'user',
+                                    text: 'User'
                                 }
                             ]
                         },
@@ -87,25 +69,28 @@ Ext.define('monitor.view.MainView', {
                                 
                             },
                             itemId: 'detailsPanel',
-                            tpl: [
-                                '<tpl if="values.id">',
-                                '    <h1>{title}</h1>',
-                                '    <p>',
-                                '        {description}',
-                                '    </p>',
-                                '</tpl>',
-                                '',
-                                '<tpl if="!values.id">',
-                                '    <h1>Please select a record</h1>',
-                                '</tpl>'
-                            ],
                             resizable: false,
                             layout: {
                                 type: 'fit'
                             },
                             bodyBorder: false,
                             bodyPadding: '10 10 10 10',
-                            manageHeight: false
+                            manageHeight: false,
+                            items: [
+                                {
+                                    xtype: 'gridpanel',
+                                    title: 'My Grid Panel',
+                                    store: 'MessageStore',
+                                    columns: [
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'content',
+                                            text: 'Messages',
+                                            flex: 1
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
