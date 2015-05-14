@@ -96,6 +96,23 @@
                                 "text": "User"
                             },
                             "designerId": "b41d2571-fbe9-4830-b98c-56a856a73dd7"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onUserListItemClick",
+                                "implHandler": [
+                                    "Ext.getStore('MessageStore').removeAll();"
+                                ],
+                                "name": "itemclick",
+                                "scope": "me"
+                            },
+                            "designerId": "0f5bce75-6098-4476-9145-789d228f1acd"
                         }
                     ]
                 },

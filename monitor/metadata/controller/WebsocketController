@@ -35,13 +35,9 @@
                     "                var user = selectedUsers[0];\r",
                     "                if(user.data.user === data.user){\r",
                     "                    var userStore = Ext.getStore('MessageStore');\r",
-                    "                    if(Ext.isEmpty(userList.user)&&userList.user === data.user){\r",
-                    "                        userStore.removeAll();\r",
-                    "                        userStore.user = data.user;\r",
-                    "                    }\r",
                     "                    userStore.add({'content':Ext.JSON.encode(data)});\r",
                     "                }\r",
-                    "            }            \r",
+                    "            }\r",
                     "            break;\r",
                     "        case 'connection':\r",
                     "            if(Ext.isEmpty(wsconnections[data.user])){\r",
@@ -52,12 +48,12 @@
                     "    }\r",
                     "};\r",
                     "ws.onopen = function() {\r",
-                    "    \r",
+                    "\r",
                     "    var message ={\r",
                     "        action: 'monitor'\r",
                     "    };\r",
                     "    ws.send(JSON.stringify(message));\r",
-                    "}; "
+                    "};"
                 ]
             },
             "designerId": "3ded55da-3eb7-4b59-af31-2978256e6cec"

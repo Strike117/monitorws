@@ -33,10 +33,6 @@ Ext.define('monitor.controller.WebsocketController', {
                         var user = selectedUsers[0];
                         if(user.data.user === data.user){
                             var userStore = Ext.getStore('MessageStore');
-                            if(Ext.isEmpty(userList.user)&&userList.user === data.user){
-                                userStore.removeAll();
-                                userStore.user = data.user;
-                            }
                             userStore.add({'content':Ext.JSON.encode(data)});
                         }
                     }

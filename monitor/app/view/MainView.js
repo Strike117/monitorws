@@ -58,7 +58,13 @@ Ext.define('monitor.view.MainView', {
                                     dataIndex: 'user',
                                     text: 'User'
                                 }
-                            ]
+                            ],
+                            listeners: {
+                                itemclick: {
+                                    fn: me.onUserListItemClick,
+                                    scope: me
+                                }
+                            }
                         },
                         {
                             xtype: 'panel',
@@ -98,6 +104,10 @@ Ext.define('monitor.view.MainView', {
         });
 
         me.callParent(arguments);
+    },
+
+    onUserListItemClick: function(dataview, record, item, index, e, eOpts) {
+        Ext.getStore('MessageStore').removeAll();
     }
 
 });
