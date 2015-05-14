@@ -49,6 +49,12 @@ Ext.define('monitor.view.MainView', {
                             bodyBorder: false,
                             forceFit: true,
                             store: 'UserStore',
+                            listeners: {
+                                itemclick: {
+                                    fn: me.onUserListItemClick,
+                                    scope: me
+                                }
+                            },
                             columns: [
                                 {
                                     xtype: 'rownumberer'
@@ -57,14 +63,13 @@ Ext.define('monitor.view.MainView', {
                                     xtype: 'gridcolumn',
                                     dataIndex: 'user',
                                     text: 'User'
+                                },
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'uuid',
+                                    text: 'websocket'
                                 }
-                            ],
-                            listeners: {
-                                itemclick: {
-                                    fn: me.onUserListItemClick,
-                                    scope: me
-                                }
-                            }
+                            ]
                         },
                         {
                             xtype: 'panel',
@@ -107,7 +112,11 @@ Ext.define('monitor.view.MainView', {
     },
 
     onUserListItemClick: function(dataview, record, item, index, e, eOpts) {
-        Ext.getStore('MessageStore').removeAll();
+        // Ext.getStore('MessageStore').removeAll();
+        var messageStore  = Ext.getStore('MessageStore');
+
+        messageStore.clearFilter();
+        messageStore.filter([{property:'user',value:record.data.user},{property:'uuid',value:record.data.uuid}]);
     }
 
 });

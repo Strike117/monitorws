@@ -23,6 +23,12 @@ Ext.define('monitor.model.Message', {
     fields: [
         {
             name: 'content'
+        },
+        {
+            name: 'user'
+        },
+        {
+            name: 'uuid'
         }
     ]
 });

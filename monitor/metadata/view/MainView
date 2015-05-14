@@ -76,13 +76,34 @@
                             "designerId": "e0848696-2ab7-4a84-b385-dc05b44c0700"
                         },
                         {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onUserListItemClick",
+                                "implHandler": [
+                                    "// Ext.getStore('MessageStore').removeAll();\r",
+                                    "var messageStore  = Ext.getStore('MessageStore');\r",
+                                    "\r",
+                                    "messageStore.clearFilter();\r",
+                                    "messageStore.filter([{property:'user',value:record.data.user},{property:'uuid',value:record.data.uuid}]);"
+                                ],
+                                "name": "itemclick",
+                                "scope": "me"
+                            },
+                            "designerId": "0f5bce75-6098-4476-9145-789d228f1acd"
+                        },
+                        {
                             "type": "Ext.grid.RowNumberer",
                             "reference": {
                                 "name": "columns",
                                 "type": "array"
                             },
                             "codeClass": null,
-                            "designerId": "8b6e71d0-045d-4c42-b2d7-6397e9b58e05"
+                            "designerId": "0f62d8db-cfa0-4c6f-b5eb-30c83a252561"
                         },
                         {
                             "type": "Ext.grid.column.Column",
@@ -98,21 +119,17 @@
                             "designerId": "b41d2571-fbe9-4830-b98c-56a856a73dd7"
                         },
                         {
-                            "type": "basiceventbinding",
+                            "type": "Ext.grid.column.Column",
                             "reference": {
-                                "name": "listeners",
+                                "name": "columns",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "onUserListItemClick",
-                                "implHandler": [
-                                    "Ext.getStore('MessageStore').removeAll();"
-                                ],
-                                "name": "itemclick",
-                                "scope": "me"
+                                "dataIndex": "uuid",
+                                "text": "websocket"
                             },
-                            "designerId": "0f5bce75-6098-4476-9145-789d228f1acd"
+                            "designerId": "e7a3eb29-77ae-4db3-8e94-ea1904c4dcd0"
                         }
                     ]
                 },

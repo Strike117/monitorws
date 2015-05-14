@@ -21,6 +21,18 @@
                 "name": "user"
             },
             "designerId": "00ee1087-5947-4732-b16f-91f908a404a0"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "uuid"
+            },
+            "designerId": "79488c73-6d2c-48f3-aea3-7dc421e55bed"
         }
     ]
 }

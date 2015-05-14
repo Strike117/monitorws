@@ -23,6 +23,9 @@ Ext.define('monitor.model.Record', {
     fields: [
         {
             name: 'user'
+        },
+        {
+            name: 'uuid'
         }
     ]
 });
