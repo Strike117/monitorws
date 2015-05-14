@@ -61,6 +61,7 @@
         },
         "063d45aa-29ff-441f-875a-9cfda37d8a00": {
             "id": "063d45aa-29ff-441f-875a-9cfda37d8a00",
+            "expanded": false,
             "cn": [
                 {
                     "id": "63835d30-95ab-444a-bfae-8b6eaf682ea0"
@@ -80,6 +81,7 @@
         },
         "1a185a81-60ce-4973-b4fc-b084d8c31368": {
             "id": "1a185a81-60ce-4973-b4fc-b084d8c31368",
+            "expanded": false,
             "cn": [
                 {
                     "id": "4eeb7e46-7d01-4133-bba6-9f2f811a8db6"

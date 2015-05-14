@@ -30,16 +30,17 @@ Ext.define('monitor.controller.WebsocketController', {
 
             data = Ext.JSON.decode(data.data);
             var user = data.user;
+            console.log('data',data);
             switch(data.action){
                 case 'notification':
                     console.log('notification');
                     console.log(user);
                     console.log(data);
 
-        //             users[user] = users[user] || [];
-        //             for(var length = users[user].length, i = 0; i<length; ++i){
-        //                 messageStore.add({'content':Ext.JSON.encode(data),'user':data.user,'uuid':users[user][i]});
-        //             }
+                    //             users[user] = users[user] || [];
+                    //             for(var length = users[user].length, i = 0; i<length; ++i){
+                    //                 messageStore.add({'content':Ext.JSON.encode(data),'user':data.user,'uuid':users[user][i]});
+                    //             }
 
                     messageStore.add({'content':Ext.JSON.encode(data),'user':data.user,'uuid':data.uuid});
 
@@ -65,6 +66,16 @@ Ext.define('monitor.controller.WebsocketController', {
                     users[user] = users[user] || [];
                     userStore.add({'user': data.user,'uuid':data.uuid});
                     users[user].push(data.uuid);
+
+                    break;
+                case 'disconnection':
+                    console.log('disconnection');
+                    console.log(user);
+                    console.log(data);
+                    var index = userStore.findBy(function(record){
+                        return record.data.uuid==data.uuid && record.data.user==data.user;
+                    });
+                    userStore.removeAt(index);
 
                     break;
             }
